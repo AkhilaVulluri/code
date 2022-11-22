@@ -120,7 +120,7 @@ int main()
 	
 	if(schoice==1)
 	{
-	jump:
+	
 		ccleintid=socket(AF_INET,SOCK_STREAM,0);
 		if(ccleintid==-1)
 		{
@@ -143,6 +143,7 @@ int main()
 			cout<<"CONNECTION ESTABLISHMENT UNSUCCESSFUL\n";
 			exit(0);
 		}
+	jump:
 		icount = checkwin();
 		
 		while(icount!=1)
