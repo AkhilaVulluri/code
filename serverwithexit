@@ -144,6 +144,7 @@ int main()
 	if(schoice==1)
 	{
 	jump:
+		
 		serverid=socket(AF_INET,SOCK_STREAM,0);
 		if(serverid==-1)
 		{
@@ -151,16 +152,19 @@ int main()
 			exit(0);
 		}
 		cout<<"IN SOCKET CREATION IN SERVER SIDE SUCCESSFUL\n";
-		int sid;
+		int sid,port;
+		port= 6999;
 		struct sockaddr_in ssadd;
 		ssadd.sin_family=AF_INET;
-		ssadd.sin_port=htons(6999);
+		ssadd.sin_port=htons(port);
 		ssadd.sin_addr.s_addr=inet_addr("10.0.2.15");
 		sid=bind(serverid,(struct sockaddr*)&ssadd,sizeof(ssadd));
 		if(sid==-1)
 		{
-			cout<<"\nBINDING FAILURE AT SERVER SIDE";
-			exit(0);
+		port+=1;
+		ssadd.sin_port=htons(port);
+		ssadd.sin_addr.s_addr=inet_addr("10.0.2.15");
+		sid=bind(serverid,(struct sockaddr*)&ssadd,sizeof(ssadd));
 		}
 		cout<<"\nBINDING SUCCESSFUL AT SERVER SIDE";
 
