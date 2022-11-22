@@ -82,7 +82,7 @@ int main()
 	int ccleintid;
 	char str[100];
 	int clientid;
-	int msgbyte;
+	int msgbyte,cho;
 	int choice,aopen,schoice;
 	int icount;
 	char mark;
@@ -115,7 +115,6 @@ int main()
     if(schoice==2)
     {
 	leader:
-		int cho;
         cout<<"\n\n";
         cout<<"\tLEADERBOARD\n\n";
         char cfile;
@@ -211,7 +210,7 @@ int main()
 				if(cho==1)
 					goto jump;
 				else if(cho==2)
-					goto Leader;
+					goto leader;
 				else if(cho==3)
 					goto jump2;
 				else 
