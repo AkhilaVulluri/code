@@ -119,6 +119,8 @@ int main()
 	
 	if(schoice==1)
 	{
+	int port;
+	port=6999;
 	jump:
 		ccleintid=socket(AF_INET,SOCK_STREAM,0);
 		if(ccleintid==-1)
@@ -127,10 +129,8 @@ int main()
 			exit(0);
 		}
 		cout<<"IN SOCKET CREATION IN CLIENT SIDE SUCCESSFUL\n";
-		
+		port+=1;
 		struct sockaddr_in csadd;
-		int port;
-		port=6999;
 		csadd.sin_family=AF_INET;
 		csadd.sin_port=htons(port);
 		csadd.sin_addr.s_addr=inet_addr("10.0.2.15");
@@ -141,11 +141,8 @@ int main()
 		}
 		if(c==(-1))
 		{
-			port+=1;
-			csadd.sin_port=htons(port);
-			csadd.sin_addr.s_addr=inet_addr("10.0.2.15");
-			int c=connect(ccleintid,(struct sockaddr*)&csadd,sizeof(csadd));
-			cout<<"CONNECTION ESTABLISHMENT SUCCESSFUL\n";
+			cout<<"CONNECTION ESTABLISHMENT UNSUCCESSFUL\n";
+			exit(0);
 		}
 	
 		icount = checkwin();
