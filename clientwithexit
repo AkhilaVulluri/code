@@ -197,6 +197,7 @@ int main()
 			if(choice==10)
 			{
 				cout<<"You win";
+				close(ccleintid);
 				cout<<"\n";
 				fprintf(filep,"\t\nClient\n");
 				cout<<"\n";
@@ -256,6 +257,7 @@ int main()
 			{	board();
 				int flag=11;
 				cout<<"server win";
+				close(ccleintid);
 				cout<<"\n";
 				fprintf(filep,"\t\nServer\n");
 				cout<<"\n";
