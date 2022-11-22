@@ -129,8 +129,10 @@ int main()
 		cout<<"IN SOCKET CREATION IN CLIENT SIDE SUCCESSFUL\n";
 		
 		struct sockaddr_in csadd;
+		int port;
+		port=6999;
 		csadd.sin_family=AF_INET;
-		csadd.sin_port=htons(6999);
+		csadd.sin_port=htons(port);
 		csadd.sin_addr.s_addr=inet_addr("10.0.2.15");
 		int c=connect(ccleintid,(struct sockaddr*)&csadd,sizeof(csadd));
 		if(c==0)
@@ -139,8 +141,10 @@ int main()
 		}
 		if(c==(-1))
 		{
-			cout<<"CONNECTION ESTABLISHMENT UNSUCCESSFUL\n";
-			exit(0);
+			port+=1;
+			csadd.sin_port=htons(port);
+			csadd.sin_addr.s_addr=inet_addr("10.0.2.15");
+			int c=connect(ccleintid,(struct sockaddr*)&csadd,sizeof(csadd));
 		}
 	
 		icount = checkwin();
