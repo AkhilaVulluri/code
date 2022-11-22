@@ -201,8 +201,7 @@ int main()
 						goto jump2;
 					else 
 						getchar();
-					close(serverid);
-				break;
+					break;
 			}
 			mark='X';
 			if (choice == 1 && square[1] == '1')
@@ -259,8 +258,7 @@ int main()
 						goto jump2;
 					else 
 						getchar();
-					close(serverid);
-				break;
+					break;
 			}
 		
 
@@ -307,9 +305,9 @@ int main()
 		
 	}
 	
-	close(serverid);
-	return 0;
+	
  }
- 
+ close(serverid);
+	return 0;
  
 }
