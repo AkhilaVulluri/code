@@ -111,8 +111,7 @@ int main()
 	{
 	jump2:
 		cout<<"Exit\n";
-		cout<<"THANK U FOR GAMING THE GAME \n";
-		cout<<"SEE YOU AS SOON AS POSSIABLE\n";
+		cout<<"THANK U FOR PLAYING THE GAME \n";
 		cout<<"HAVE A NICE DAY..........!!!!!";
 		close(ccleintid);
 		return 0;
