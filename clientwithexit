@@ -215,7 +215,7 @@ int main()
 					goto jump2;
 				else 
 					getchar();
-				close(ccleintid);
+				break;
 				
 			}
 			mark='O';
@@ -275,14 +275,14 @@ int main()
 					goto jump2;
 				else 
 					getchar();
-				close(ccleintid);
+				break;
 				
 			}
 			
 		
 		}
-		close(ccleintid);
-		return 0;
+		
 	}  
-
+close(ccleintid);
+		return 0;
 }
