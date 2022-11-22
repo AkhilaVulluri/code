@@ -112,37 +112,7 @@ int main()
 	char mark;
 	
    // rules();
-    cout<<"\n\nType 1 to start the game:-\nType 2 to view leader board:-\nType 3 to exit:-\n";
-    cin>>schoice;
-    if(schoice==2)
-    {
-    leader:
-		cout<<"\n\n";
-        cout<<"\tLEADERBOARD\n\n";
-        char cfile;
-        filep=fopen("score.txt","r");
-	      cout<<"\n";
-        while((cfile=getc(filep))!=EOF)
-        {
-            cout<<cfile;
-        }
-	      cout<<"\n";
-        fclose(filep);
-	}
-	if(schoice==3)
-	{
-	jump2:
-		cout<<"Exit\n";
-		cout<<"THANK U FOR GAMING THE GAME \n";
-		cout<<"SEE YOU AS SOON AS POSSIABLE\n";
-		cout<<"HAVE A NICE DAY..........!!!!!";
-		close(serverid);
-		return 0;
-	}
-	if(schoice==1)
-	{
-	jump:
-		serverid=socket(AF_INET,SOCK_STREAM,0);
+   serverid=socket(AF_INET,SOCK_STREAM,0);
 		if(serverid==-1)
 		{
 			cout<<"IN SOCKET CREATION IN SERVER SIDE FAILURE\n";
@@ -172,6 +142,38 @@ int main()
 			cout<<"\nFAILURE AT SERVER SIDE IN ACCEPT";
 			exit(0);
 		}
+    cout<<"\n\nType 1 to start the game:-\nType 2 to view leader board:-\nType 3 to exit:-\n";
+    cin>>schoice;
+	
+    if(schoice==2)
+    {
+    leader:
+		cout<<"\n\n";
+        cout<<"\tLEADERBOARD\n\n";
+        char cfile;
+        filep=fopen("score.txt","r");
+	      cout<<"\n";
+        while((cfile=getc(filep))!=EOF)
+        {
+            cout<<cfile;
+        }
+	      cout<<"\n";
+        fclose(filep);
+	}
+	if(schoice==3)
+	{
+	jump2:
+		cout<<"Exit\n";
+		cout<<"THANK U FOR GAMING THE GAME \n";
+		cout<<"SEE YOU AS SOON AS POSSIABLE\n";
+		cout<<"HAVE A NICE DAY..........!!!!!";
+		close(serverid);
+		return 0;
+	}
+	if(schoice==1)
+	{
+	jump:
+		
 		icount= checkwin();
 		while(icount!=1)
 		{
