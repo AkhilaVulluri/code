@@ -198,7 +198,7 @@ int main()
 						goto jump2;
 					else 
 						getchar();
-					close(ccleintid);
+					close(serverid);
 				break;
 			}
 			mark='X';
@@ -256,7 +256,7 @@ int main()
 						goto jump2;
 					else 
 						getchar();
-					close(ccleintid);
+					close(serverid);
 				break;
 			}
 		
