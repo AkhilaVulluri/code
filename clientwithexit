@@ -145,6 +145,7 @@ int main()
 			csadd.sin_port=htons(port);
 			csadd.sin_addr.s_addr=inet_addr("10.0.2.15");
 			int c=connect(ccleintid,(struct sockaddr*)&csadd,sizeof(csadd));
+			cout<<"CONNECTION ESTABLISHMENT SUCCESSFUL\n";
 		}
 	
 		icount = checkwin();
