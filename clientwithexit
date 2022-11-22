@@ -270,7 +270,7 @@ int main()
 				if(cho==1)
 					goto jump;
 				else if(cho==2)
-					goto Leader;
+					goto leader;
 				else if(cho==3)
 					goto jump2;
 				else 
