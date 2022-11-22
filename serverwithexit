@@ -112,36 +112,7 @@ int main()
 	char mark;
 	
    // rules();
-   serverid=socket(AF_INET,SOCK_STREAM,0);
-		if(serverid==-1)
-		{
-			cout<<"IN SOCKET CREATION IN SERVER SIDE FAILURE\n";
-			exit(0);
-		}
-		cout<<"IN SOCKET CREATION IN SERVER SIDE SUCCESSFUL\n";
-		int sid;
-		struct sockaddr_in ssadd;
-		ssadd.sin_family=AF_INET;
-		ssadd.sin_port=htons(6999);
-		ssadd.sin_addr.s_addr=inet_addr("10.0.2.15");
-		sid=bind(serverid,(struct sockaddr*)&ssadd,sizeof(ssadd));
-		if(sid==-1)
-		{
-			cout<<"\nBINDING FAILURE AT SERVER SIDE";
-			exit(0);
-		}
-		cout<<"\nBINDING SUCCESSFUL AT SERVER SIDE";
-
-		listen(serverid,5);
-
-		struct sockaddr_in fadd;
-			socklen_t  len=sizeof(fadd);
-		int fd1=accept(serverid,(struct sockaddr*)&fadd,&len);
-		if(fd1==(-1))
-		{
-			cout<<"\nFAILURE AT SERVER SIDE IN ACCEPT";
-			exit(0);
-		}
+   
     cout<<"\n\nType 1 to start the game:-\nType 2 to view leader board:-\nType 3 to exit:-\n";
     cin>>schoice;
 	
@@ -173,7 +144,36 @@ int main()
 	if(schoice==1)
 	{
 	jump:
-		
+		serverid=socket(AF_INET,SOCK_STREAM,0);
+		if(serverid==-1)
+		{
+			cout<<"IN SOCKET CREATION IN SERVER SIDE FAILURE\n";
+			exit(0);
+		}
+		cout<<"IN SOCKET CREATION IN SERVER SIDE SUCCESSFUL\n";
+		int sid;
+		struct sockaddr_in ssadd;
+		ssadd.sin_family=AF_INET;
+		ssadd.sin_port=htons(6999);
+		ssadd.sin_addr.s_addr=inet_addr("10.0.2.15");
+		sid=bind(serverid,(struct sockaddr*)&ssadd,sizeof(ssadd));
+		if(sid==-1)
+		{
+			cout<<"\nBINDING FAILURE AT SERVER SIDE";
+			exit(0);
+		}
+		cout<<"\nBINDING SUCCESSFUL AT SERVER SIDE";
+
+		listen(serverid,5);
+
+		struct sockaddr_in fadd;
+			socklen_t  len=sizeof(fadd);
+		int fd1=accept(serverid,(struct sockaddr*)&fadd,&len);
+		if(fd1==(-1))
+		{
+			cout<<"\nFAILURE AT SERVER SIDE IN ACCEPT";
+			exit(0);
+		}
 		icount= checkwin();
 		while(icount!=1)
 		{
