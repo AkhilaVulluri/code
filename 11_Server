@@ -254,7 +254,7 @@ int main()
 				filep=fopen("score.txt","aopen+");
 				if(choice==11)
 				{
-					cout<<"You win";
+					cout<<"Client Win";
 					square[1] = '1';
 					square[2] = '2';
 					square[3] = '3';
@@ -266,7 +266,7 @@ int main()
 					square[9] = '9';
 					close(server_file_discriptor);
 						cout<<"\n";
-						fprintf(filep,"\t\nServer\n");
+						fprintf(filep,"\t\nClient\n");
 						cout<<"\n";
 						getchar();
 						fclose(filep);
@@ -344,7 +344,7 @@ int main()
 				if(icount==1)
 				{	board();
 					int flag=10;
-					cout<<"client win";
+					cout<<"you win";
 					square[1] = '1';
 					square[2] = '2';
 					square[3] = '3';
@@ -356,7 +356,7 @@ int main()
 					square[9] = '9';
 					close(server_file_discriptor);
 					cout<<"\n";
-						fprintf(filep,"\t\nClient\n");
+						fprintf(filep,"\t\nServer\n");
 						cout<<"\n";
 						getchar();
 						fclose(filep);
