@@ -150,13 +150,13 @@ int main()
 			}
 	}
 	
-	if(Main_choice==3)
+	if(schoice==3)
 		{
 		jump2:
 			cout<<"Exit\n";
 			cout<<"THANK U FOR PLAYING THE GAME \n";
 			cout<<"HAVE A NICE DAY..........!!!!!\n";
-			close(server_file_discriptor);
+			close(serverid);
 			return 0;
 		}
 		
