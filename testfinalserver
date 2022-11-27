@@ -1,3 +1,4 @@
+//Header Files
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/types.h>
@@ -7,6 +8,9 @@
 #include<bits/stdc++.h>
 #include<string.h>
 #include<iostream>
+#include "header.h"
+#define MAX 10
+#define BACKLOG 5
 using namespace std;
 
 char square[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
